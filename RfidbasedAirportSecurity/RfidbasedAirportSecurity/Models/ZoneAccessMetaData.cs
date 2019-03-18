@@ -14,7 +14,12 @@ namespace RfidbasedAirportSecurity.Models
 
         public string ClassType { get; set; }
 
-        public string ZoneAccess { get; set; }
+        public bool B1 { get; set; }
+        public bool C1 { get; set; }
+        public bool D3 { get; set; }
+        public bool E1 { get; set; }
+        public bool F1 { get; set; }
+        public bool G1 { get; set; }
 
 
     }

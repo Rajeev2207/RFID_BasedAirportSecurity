@@ -9,7 +9,7 @@ namespace RfidbasedAirportSecurity.Models
     public class RfidInventory
     {
         [Key]
-        public int RFID_ID { get; set; }
+        public string RFID_ID { get; set; }
 
         [Required]
         public string Device_Type { get; set; }  // Store Values as Tag/Reader.

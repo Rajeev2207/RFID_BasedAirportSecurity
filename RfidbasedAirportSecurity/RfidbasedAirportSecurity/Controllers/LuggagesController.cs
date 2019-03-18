@@ -25,7 +25,7 @@ namespace RfidbasedAirportSecurity.Controllers
 
         // GET: api/Luggages/5
         [ResponseType(typeof(Luggage))]
-        public async Task<IHttpActionResult> GetLuggage(int id)
+        public async Task<IHttpActionResult> GetLuggage(string id)
         {
             Luggage luggage = await db.Luggages.FindAsync(id);
             if (luggage == null)
@@ -38,7 +38,7 @@ namespace RfidbasedAirportSecurity.Controllers
 
         // PUT: api/Luggages/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutLuggage(int id, Luggage luggage)
+        public async Task<IHttpActionResult> PutLuggage(string id, Luggage luggage)
         {
             if (!ModelState.IsValid)
             {
@@ -81,14 +81,29 @@ namespace RfidbasedAirportSecurity.Controllers
             }
 
             db.Luggages.Add(luggage);
-            await db.SaveChangesAsync();
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (LuggageExists(luggage.Luggage_RFID_Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = luggage.Luggage_RFID_Id }, luggage);
         }
 
         // DELETE: api/Luggages/5
         [ResponseType(typeof(Luggage))]
-        public async Task<IHttpActionResult> DeleteLuggage(int id)
+        public async Task<IHttpActionResult> DeleteLuggage(string id)
         {
             Luggage luggage = await db.Luggages.FindAsync(id);
             if (luggage == null)
@@ -111,7 +126,7 @@ namespace RfidbasedAirportSecurity.Controllers
             base.Dispose(disposing);
         }
 
-        private bool LuggageExists(int id)
+        private bool LuggageExists(string id)
         {
             return db.Luggages.Count(e => e.Luggage_RFID_Id == id) > 0;
         }

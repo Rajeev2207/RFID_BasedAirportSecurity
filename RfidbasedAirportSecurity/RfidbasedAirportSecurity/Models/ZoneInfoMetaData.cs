@@ -15,7 +15,7 @@ namespace RfidbasedAirportSecurity.Models
         public string ZoneId { get; set; }
 
         [ForeignKey("RfidInventory")]
-        public int RFID_ID { get; set; }
+        public string RFID_ID { get; set; }
         public RfidInventory RfidInventory { get; set; }
 
         [Required]

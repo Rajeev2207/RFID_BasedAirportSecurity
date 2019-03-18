@@ -15,7 +15,7 @@ namespace RfidbasedAirportSecurity.Models
         public string ZoneId { get; set; }  // Primary Key
 
         [ForeignKey("RfidInventory")]
-        public int RFID_ID { get; set; }
+        public string RFID_ID { get; set; }
         public RfidInventory RfidInventory { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]  // similar to SYSDATE

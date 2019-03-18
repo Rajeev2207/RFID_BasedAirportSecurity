@@ -21,13 +21,11 @@ namespace RfidbasedAirportSecurity.Models
         [Column(Order = 2)]
         public string PNR { get; set; } // Primary Key
 
-        [Key]
-        [Column(Order = 3)]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]  // similar to SYSDATE
-        public DateTime TimeStamp { get; set; } // Primary Key
+        public DateTime TimeStamp { get; set; }
 
         [ForeignKey("RfidInventory")]
-        public int RFID_ID { get; set; }
+        public string RFID_ID { get; set; }
         public RfidInventory RfidInventory { get; set; }
 
         [ForeignKey("FlightDetails")]

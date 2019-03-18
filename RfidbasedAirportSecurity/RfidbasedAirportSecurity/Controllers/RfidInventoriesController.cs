@@ -38,7 +38,7 @@ namespace RfidbasedAirportSecurity.Controllers
 
         // PUT: api/RfidInventories/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutRfidInventory(int id, RfidInventory rfidInventory)
+        public async Task<IHttpActionResult> PutRfidInventory(string id, RfidInventory rfidInventory)
         {
             if (!ModelState.IsValid)
             {
@@ -111,7 +111,7 @@ namespace RfidbasedAirportSecurity.Controllers
             base.Dispose(disposing);
         }
 
-        private bool RfidInventoryExists(int id)
+        private bool RfidInventoryExists(string id)
         {
             return db.RfidInventories.Count(e => e.RFID_ID == id) > 0;
         }

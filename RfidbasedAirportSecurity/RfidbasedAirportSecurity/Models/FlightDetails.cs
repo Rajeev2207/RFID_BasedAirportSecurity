@@ -24,7 +24,7 @@ namespace RfidbasedAirportSecurity.Models
         public DateTime Arrival_Time { get; set; }
         public DateTime Departure_Time { get; set; }
         public string Status { get; set; }
-        public int Belt_Id { get; set; }
+        public string Belt_Id { get; set; }
 
     }
 }

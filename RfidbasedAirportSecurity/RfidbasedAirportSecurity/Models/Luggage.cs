@@ -12,10 +12,10 @@ namespace RfidbasedAirportSecurity.Models
         // Luggage_RFID_Id	Passenger_ID	Flight_Id	Luggage_Stage	Luggage_Location	Time
 
         [Key]
-        public int Luggage_RFID_Id { get; set; } // Primary Key
+        public string Luggage_RFID_Id { get; set; } // Primary Key
 
         //[ForeignKey("PassengerDetails")]
-        public int Passenger_ID { get; set; }
+        public string Passenger_ID { get; set; }
         public PassengerDetails PassengerDetails { get; set; }
 
         [ForeignKey("FlightDetails")]

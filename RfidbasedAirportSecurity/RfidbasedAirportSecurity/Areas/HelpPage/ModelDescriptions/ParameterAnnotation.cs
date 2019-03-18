@@ -1,6 +1,6 @@
 using System;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

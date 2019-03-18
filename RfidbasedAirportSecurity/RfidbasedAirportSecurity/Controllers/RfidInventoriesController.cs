@@ -9,13 +9,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using RfidbasedAirportSecurity.Models;
+using RfidBasedAirportSecurity.Models;
 
-namespace RfidbasedAirportSecurity.Controllers
+namespace RfidBasedAirportSecurity.Controllers
 {
     public class RfidInventoriesController : ApiController
     {
-        private RfidbasedAirportSecurityContext db = new RfidbasedAirportSecurityContext();
+        private RfidBasedAirportSecurityContext db = new RfidBasedAirportSecurityContext();
 
         // GET: api/RfidInventories
         public IQueryable<RfidInventory> GetRfidInventories()
@@ -25,7 +25,7 @@ namespace RfidbasedAirportSecurity.Controllers
 
         // GET: api/RfidInventories/5
         [ResponseType(typeof(RfidInventory))]
-        public async Task<IHttpActionResult> GetRfidInventory(int id)
+        public async Task<IHttpActionResult> GetRfidInventory(string id)
         {
             RfidInventory rfidInventory = await db.RfidInventories.FindAsync(id);
             if (rfidInventory == null)
@@ -81,14 +81,29 @@ namespace RfidbasedAirportSecurity.Controllers
             }
 
             db.RfidInventories.Add(rfidInventory);
-            await db.SaveChangesAsync();
+
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (RfidInventoryExists(rfidInventory.RFID_ID))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = rfidInventory.RFID_ID }, rfidInventory);
         }
 
         // DELETE: api/RfidInventories/5
         [ResponseType(typeof(RfidInventory))]
-        public async Task<IHttpActionResult> DeleteRfidInventory(int id)
+        public async Task<IHttpActionResult> DeleteRfidInventory(string id)
         {
             RfidInventory rfidInventory = await db.RfidInventories.FindAsync(id);
             if (rfidInventory == null)

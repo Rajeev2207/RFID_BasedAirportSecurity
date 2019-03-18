@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

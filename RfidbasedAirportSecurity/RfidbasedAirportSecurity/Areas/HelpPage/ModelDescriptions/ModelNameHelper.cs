@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

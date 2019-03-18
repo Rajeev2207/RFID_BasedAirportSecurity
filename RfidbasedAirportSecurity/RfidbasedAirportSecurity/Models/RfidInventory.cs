@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace RfidbasedAirportSecurity.Models
+namespace RfidBasedAirportSecurity.Models
 {
     public class RfidInventory
     {

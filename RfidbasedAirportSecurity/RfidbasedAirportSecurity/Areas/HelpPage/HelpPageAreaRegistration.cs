@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage
+namespace RfidBasedAirportSecurity.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

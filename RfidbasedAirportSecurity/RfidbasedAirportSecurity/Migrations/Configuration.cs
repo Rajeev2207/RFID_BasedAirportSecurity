@@ -1,18 +1,18 @@
-namespace RfidbasedAirportSecurity.Migrations
+namespace RfidBasedAirportSecurity.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using Models;
-    internal sealed class Configuration : DbMigrationsConfiguration<RfidbasedAirportSecurity.Models.RfidbasedAirportSecurityContext>
+
+    internal sealed class Configuration : DbMigrationsConfiguration<RfidBasedAirportSecurity.Models.RfidBasedAirportSecurityContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(RfidbasedAirportSecurity.Models.RfidbasedAirportSecurityContext context)
+        protected override void Seed(RfidBasedAirportSecurity.Models.RfidBasedAirportSecurityContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -26,82 +26,89 @@ namespace RfidbasedAirportSecurity.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            context.RfidInventories.AddOrUpdate(new RfidInventory[] {
-                new RfidInventory() { RFID_ID = "read000", Device_Type = "Reader", Status = "Active"},
-                new RfidInventory() { RFID_ID = "read001", Device_Type = "Reader", Status = "Active"},
-                new RfidInventory() { RFID_ID = "read002", Device_Type = "Reader", Status = "Active"},
-                new RfidInventory() { RFID_ID = "read003", Device_Type = "Reader", Status = "Active" },
-                new RfidInventory() { RFID_ID = "read004", Device_Type = "Reader", Status = "Active" },
-                new RfidInventory() { RFID_ID = "read005", Device_Type = "Reader", Status = "Active" },
-                new RfidInventory() { RFID_ID = "pass001", Device_Type = "Tag", Status = "Active"},
-                new RfidInventory() { RFID_ID = "pass002", Device_Type = "Tag", Status = "Active"},
-                new RfidInventory() { RFID_ID = "pass003", Device_Type = "Tag", Status = "Active"},
-                new RfidInventory() { RFID_ID = "lugg001", Device_Type = "Tag", Status = "Active"},
-                new RfidInventory() { RFID_ID = "lugg002", Device_Type = "Tag", Status = "Active"},
-                new RfidInventory() { RFID_ID = "lugg003", Device_Type = "Tag", Status = "Active"},
-            }
-            );
-
-            context.PassengerAreaAccesses.AddOrUpdate(new PassengerAreaAccess[] 
+            context.RfidInventories.AddOrUpdate(new Models.RfidInventory[]
             {
-                new PassengerAreaAccess() {ZoneId="D3", RFID_ID="pass001", Role="Passenger"},
-                new PassengerAreaAccess() {ZoneId="C1", RFID_ID="pass002", Role="Passenger"},
-                new PassengerAreaAccess() {ZoneId="E1", RFID_ID="pass003", Role="Passenger"},
+                new Models.RfidInventory() { RFID_ID = "read000", Device_Type = "Reader", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "read001", Device_Type = "Reader", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "read002", Device_Type = "Reader", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "read003", Device_Type = "Reader", Status = "Active" },
+                new Models.RfidInventory() { RFID_ID = "read004", Device_Type = "Reader", Status = "Active" },
+                new Models.RfidInventory() { RFID_ID = "read005", Device_Type = "Reader", Status = "Active" },
+                new Models.RfidInventory() { RFID_ID = "pass001", Device_Type = "Tag", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "pass002", Device_Type = "Tag", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "pass003", Device_Type = "Tag", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "lugg001", Device_Type = "Tag", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "lugg002", Device_Type = "Tag", Status = "Active"},
+                new Models.RfidInventory() { RFID_ID = "lugg003", Device_Type = "Tag", Status = "Active"},
             });
 
-            context.ZoneAccessMetaDatas.AddOrUpdate(new ZoneAccessMetaData[] {
-                new ZoneAccessMetaData() {Role="Passenger", ClassType="A",B1= true, C1=true, D3=true, E1=true,F1=false,G1=false},
-                new ZoneAccessMetaData() {Role="Passenger", ClassType="B",B1= true, C1=true, D3=false, E1=true,F1=false,G1=false},
-                new ZoneAccessMetaData() {Role="Passenger", ClassType="A",B1= true, C1=true, D3=true, E1=true,F1=true,G1=true},
-                new ZoneAccessMetaData() {Role="Passenger", ClassType="B",B1= true, C1=true, D3=true, E1=true,F1=true,G1=false},
-
-            });
-
-            context.ZoneInfoMetaDatas.AddOrUpdate(new ZoneInfoMetaData[]
+            context.PassengerAreaAccesses.AddOrUpdate(new Models.PassengerAreaAccess[]
             {
-                new ZoneInfoMetaData() {ZoneId="B1", RFID_ID="read000", Lat_Long=""},
-                new ZoneInfoMetaData() {ZoneId="C1", RFID_ID="read001", Lat_Long=""},
-                new ZoneInfoMetaData() {ZoneId="D3", RFID_ID="read002", Lat_Long=""},
-                new ZoneInfoMetaData() {ZoneId="E1", RFID_ID="read003", Lat_Long=""},
-                new ZoneInfoMetaData() {ZoneId="F1", RFID_ID="read004", Lat_Long=""},
-                new ZoneInfoMetaData() {ZoneId="G1", RFID_ID="read005", Lat_Long=""},
+                new Models.PassengerAreaAccess() {ZoneId="D3", RFID_ID="pass001", Access_Time = new DateTime(2019,3,15,1,30,00)},
+                new Models.PassengerAreaAccess() {ZoneId="C1", RFID_ID="pass002", Access_Time = new DateTime(2019,3,15,1,30,00)},
+                new Models.PassengerAreaAccess() {ZoneId="E1", RFID_ID="pass003", Access_Time = new DateTime(2019,3,15,1,30,00)},
             });
 
-            context.FlightDetails.AddOrUpdate(new FlightDetails[]
+            context.ZoneInfoMetaDatas.AddOrUpdate(new Models.ZoneInfoMetaData[]
             {
-                new FlightDetails() {Flight_Id="Alaska12", Source="Seattle", Destination="San Jose", Boarding_Gate="C3", Status = "", Belt_Id= ""},
-                new FlightDetails() {Flight_Id="Delta12", Source="Seattle", Destination="Austin", Boarding_Gate="D2", Status = "", Belt_Id= ""},
-                new FlightDetails() {Flight_Id="United12", Source="Seattle", Destination="New York", Boarding_Gate="E4", Status = "", Belt_Id= ""},
-                new FlightDetails() {Flight_Id="Alaska10", Source="San Jose", Destination="Seattle", Boarding_Gate="", Status = "Arrived", Belt_Id= "J2"},
-
+                new Models.ZoneInfoMetaData() {ZoneId="B1", RFID_ID="read000", Lat_Long="00/00"},
+                new Models.ZoneInfoMetaData() {ZoneId="C1", RFID_ID="read001", Lat_Long="00/00"},
+                new Models.ZoneInfoMetaData() {ZoneId="D3", RFID_ID="read002", Lat_Long="00/00"},
+                new Models.ZoneInfoMetaData() {ZoneId="E1", RFID_ID="read003", Lat_Long="00/00"},
+                new Models.ZoneInfoMetaData() {ZoneId="F1", RFID_ID="read004", Lat_Long="00/00"},
+                new Models.ZoneInfoMetaData() {ZoneId="G1", RFID_ID="read005", Lat_Long="00/00"},
             });
 
-            context.PassengerDetails.AddOrUpdate(new PassengerDetails[]
+            context.FlightDetails.AddOrUpdate(new Models.FlightDetails[]
             {
-                new PassengerDetails() {PassengerId = "stark1234", Name="Tony Stark", PNR = "PNR000", RFID_ID = "pass001", Flight_Id = "Alaska12", Email_id="tony.stark@gmail.com",
-                Tracking=false, Rfid_Status = "Active", Status_Reason="", IdProofType="Passport", PassengerType="A"},
+                new Models.FlightDetails() {Flight_Id="Alaska12", Source="Seattle", Destination="San Jose", Boarding_Gate="C3",
+                    Boarding_Time = new DateTime(2019,3,15,11,00,00), Arrival_Time = new DateTime(2019,3,15,11,30,00),
+                    Departure_Time = new DateTime(2019,3,15,1,30,00), Status = "", Belt_Id= ""},
 
+                new Models.FlightDetails() {Flight_Id="Delta12", Source="Seattle", Destination="Austin", Boarding_Gate="D2",
+                    Boarding_Time = new DateTime(2019,3,18,12,00,00), Arrival_Time = new DateTime(2019,3,18,12,30,00),
+                    Departure_Time = new DateTime(2019,3,18,3,30,00), Status = "", Belt_Id= ""},
 
-                new PassengerDetails() {PassengerId = "banner1234", Name="Bruce Banner", PNR = "PNR001", RFID_ID = "pass002", Flight_Id = "United12", Email_id="bruce.banner@gmail.com",
-                Tracking=true, Rfid_Status = "disabled", Status_Reason="Suspicious", IdProofType="Driving License", PassengerType="B"},
+                new Models.FlightDetails() {Flight_Id="United12", Source="Seattle", Destination="New York", Boarding_Gate="E4",
+                    Boarding_Time = new DateTime(2019,3,16,10,00,00), Arrival_Time = new DateTime(2019,3,16,11,30,00),
+                    Departure_Time = new DateTime(2019,3,16,1,30,00),Status = "", Belt_Id= ""},
 
-
-                new PassengerDetails() {PassengerId = "diana1234", Name="Princess Diana", PNR = "PNR002", RFID_ID = "pass003", Flight_Id = "United12", Email_id="princess.diana@gmail.com",
-                Tracking=false, Rfid_Status = "Active", Status_Reason="", IdProofType="Passport", PassengerType="A"},
+                new Models.FlightDetails() {Flight_Id="Alaska10", Source="San Jose", Destination="Seattle", Boarding_Gate="",
+                    Boarding_Time = new DateTime(2019,3,15,9,00,00), Arrival_Time = new DateTime(2019,3,15,11,30,00),
+                    Departure_Time = new DateTime(2019,3,15,1,30,00), Status = "Arrived", Belt_Id= "J2"},
             });
 
-            context.Luggages.AddOrUpdate(new Luggage[]
+            context.PassengerDetails.AddOrUpdate(new Models.PassengerDetails[]
             {
-                new Luggage() { Luggage_RFID_Id="lugg001", Passenger_ID="pass001", Flight_Id="Alaska12", Luggage_Location="H2", Luggage_Stage="LoadedOnFlight"},
-                new Luggage() { Luggage_RFID_Id="lugg002", Passenger_ID="pass001", Flight_Id="Alaska12", Luggage_Location="H2", Luggage_Stage="LoadedOnFlight"},
-                new Luggage() { Luggage_RFID_Id="lugg003", Passenger_ID="pass002", Flight_Id="United12", Luggage_Location="H1", Luggage_Stage="LoadedOnFlight"},
-                new Luggage() { Luggage_RFID_Id="lugg004", Passenger_ID="pass003", Flight_Id="United12", Luggage_Location="A3", Luggage_Stage="LoadedOnFlight"},
+                new Models.PassengerDetails() {PassengerId = "stark1234", Name="Tony Stark", PNR = "PNR000",
+                    TimeStamp = new DateTime(2019,3,15,7,00,00), RFID_ID = "pass001", Flight_Id = "Alaska12",
+                    Email_id ="tony.stark@gmail.com", Tracking=false, Rfid_Status = "Active", Status_Reason="",
+                    IdProofType ="Passport", PassengerType="A"},
+
+
+                new Models.PassengerDetails() {PassengerId = "banner1234", Name="Bruce Banner", PNR = "PNR001",
+                    TimeStamp = new DateTime(2019,3,15,8,00,00), RFID_ID = "pass002", Flight_Id = "United12",
+                    Email_id ="bruce.banner@gmail.com", Tracking=true, Rfid_Status = "disabled",
+                    Status_Reason ="Suspicious", IdProofType="Driving License", PassengerType="B"},
+
+
+                new Models.PassengerDetails() {PassengerId = "diana1234", Name="Princess Diana", PNR = "PNR002",
+                    TimeStamp = new DateTime(2019,3,16,7,00,00), RFID_ID = "pass003", Flight_Id = "United12",
+                    Email_id ="princess.diana@gmail.com", Tracking=false, Rfid_Status = "Active", Status_Reason="",
+                    IdProofType ="Passport", PassengerType="A"},
             });
 
-
-
-
+            context.Luggages.AddOrUpdate(new Models.Luggage[]
+            {
+                new Models.Luggage() { Luggage_RFID_Id="lugg001", Passenger_ID="pass001", Flight_Id="Alaska12",
+                    Luggage_Location ="H2", Luggage_Stage="LoadedOnFlight"},
+                new Models.Luggage() { Luggage_RFID_Id="lugg002", Passenger_ID="pass001", Flight_Id="Alaska12",
+                    Luggage_Location ="H2", Luggage_Stage="LoadedOnFlight"},
+                new Models.Luggage() { Luggage_RFID_Id="lugg003", Passenger_ID="pass002", Flight_Id="United12",
+                    Luggage_Location ="H1", Luggage_Stage="LoadedOnFlight"},
+                new Models.Luggage() { Luggage_RFID_Id="lugg004", Passenger_ID="pass003", Flight_Id="United12",
+                    Luggage_Location ="A3", Luggage_Stage="LoadedOnFlight"},
+            });
         }
     }
 }

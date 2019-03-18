@@ -9,13 +9,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using RfidbasedAirportSecurity.Models;
+using RfidBasedAirportSecurity.Models;
 
-namespace RfidbasedAirportSecurity.Controllers
+namespace RfidBasedAirportSecurity.Controllers
 {
     public class PassengerAreaAccessesController : ApiController
     {
-        private RfidbasedAirportSecurityContext db = new RfidbasedAirportSecurityContext();
+        private RfidBasedAirportSecurityContext db = new RfidBasedAirportSecurityContext();
 
         // GET: api/PassengerAreaAccesses
         public IQueryable<PassengerAreaAccess> GetPassengerAreaAccesses()

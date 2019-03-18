@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
+using RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage
+namespace RfidBasedAirportSecurity.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

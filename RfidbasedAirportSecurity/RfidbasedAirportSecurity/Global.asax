@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="RfidbasedAirportSecurity.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="RfidBasedAirportSecurity.WebApiApplication" Language="C#" %>

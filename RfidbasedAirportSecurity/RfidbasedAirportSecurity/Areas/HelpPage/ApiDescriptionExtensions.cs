@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage
+namespace RfidBasedAirportSecurity.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

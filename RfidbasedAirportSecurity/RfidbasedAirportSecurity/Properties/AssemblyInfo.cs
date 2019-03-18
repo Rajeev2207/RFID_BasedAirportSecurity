@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RfidbasedAirportSecurity")]
+[assembly: AssemblyTitle("RfidBasedAirportSecurity")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("RfidbasedAirportSecurity")]
+[assembly: AssemblyProduct("RfidBasedAirportSecurity")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ed65264e-8add-42b6-ae92-2c9e07db4d65")]
+[assembly: Guid("a2db9cfc-c627-4d96-a161-fc1e594d5865")]
 
 // Version information for an assembly consists of the following four values:
 //

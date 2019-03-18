@@ -5,12 +5,10 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RfidbasedAirportSecurity.Models
+namespace RfidBasedAirportSecurity.Models
 {
     public class Luggage
     {
-        // Luggage_RFID_Id	Passenger_ID	Flight_Id	Luggage_Stage	Luggage_Location	Time
-
         [Key]
         public string Luggage_RFID_Id { get; set; } // Primary Key
 

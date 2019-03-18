@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
-using RfidbasedAirportSecurity.Areas.HelpPage.Models;
+using RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
+using RfidBasedAirportSecurity.Areas.HelpPage.Models;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage
+namespace RfidBasedAirportSecurity.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

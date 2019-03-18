@@ -5,12 +5,10 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RfidbasedAirportSecurity.Models
+namespace RfidBasedAirportSecurity.Models
 {
     public class PassengerDetails
     {
-        // Name	Passenger_Id (verification id no)	PNR	TimeStamp	RFID_Id	FlightID
-        // EmailID	Tracking	RFid_Status	Status_Reason	verification IdType	PassengerType
         [Key]
         [Column(Order = 1)]
         public string PassengerId { get; set; } // Primary Key
@@ -21,7 +19,7 @@ namespace RfidbasedAirportSecurity.Models
         [Column(Order = 2)]
         public string PNR { get; set; } // Primary Key
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]  // similar to SYSDATE
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]  // similar to SYSDATE
         public DateTime TimeStamp { get; set; }
 
         [ForeignKey("RfidInventory")]
@@ -40,6 +38,5 @@ namespace RfidbasedAirportSecurity.Models
         public string Rfid_Status { get; set; }
         public string Status_Reason { get; set; }
         public string PassengerType { get; set; }
-
     }
 }

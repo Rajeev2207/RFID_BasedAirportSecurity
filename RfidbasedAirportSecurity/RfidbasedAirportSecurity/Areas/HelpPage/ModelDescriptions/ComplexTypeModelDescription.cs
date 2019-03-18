@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

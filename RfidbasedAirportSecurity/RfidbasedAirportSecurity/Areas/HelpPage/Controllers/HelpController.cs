@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
-using RfidbasedAirportSecurity.Areas.HelpPage.Models;
+using RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions;
+using RfidBasedAirportSecurity.Areas.HelpPage.Models;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.Controllers
+namespace RfidBasedAirportSecurity.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

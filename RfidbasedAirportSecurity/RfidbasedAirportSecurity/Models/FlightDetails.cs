@@ -4,13 +4,10 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace RfidbasedAirportSecurity.Models
+namespace RfidBasedAirportSecurity.Models
 {
     public class FlightDetails
     {
-        // Flight_Id	Source	Destination	Boarding Gate	Boarding_Time
-        // Departure_Time	Arrival_Time	Status	Belt_Id
-
         [Key]
         public string Flight_Id { get; set; } // Primary Key
 
@@ -25,6 +22,5 @@ namespace RfidbasedAirportSecurity.Models
         public DateTime Departure_Time { get; set; }
         public string Status { get; set; }
         public string Belt_Id { get; set; }
-
     }
 }

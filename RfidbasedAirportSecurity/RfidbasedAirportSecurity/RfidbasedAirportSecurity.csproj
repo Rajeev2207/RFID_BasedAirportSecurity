@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{69D65C93-48B9-4318-9446-D42CDD22820B}</ProjectGuid>
+    <ProjectGuid>{262DD0B0-5AA8-41F0-B8B2-28C0BA066B8D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RfidbasedAirportSecurity</RootNamespace>
-    <AssemblyName>RfidbasedAirportSecurity</AssemblyName>
+    <RootNamespace>RfidBasedAirportSecurity</RootNamespace>
+    <AssemblyName>RfidBasedAirportSecurity</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -167,22 +167,31 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FlightDetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LuggagesController.cs" />
     <Compile Include="Controllers\PassengerAreaAccessesController.cs" />
     <Compile Include="Controllers\PassengerDetailsController.cs" />
     <Compile Include="Controllers\RfidInventoriesController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\ZoneAccessMetaDatasController.cs" />
     <Compile Include="Controllers\ZoneInfoMetaDatasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903180025378_Initial.cs" />
-    <Compile Include="Migrations\201903180025378_Initial.Designer.cs">
-      <DependentUpon>201903180025378_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201903180509259_Initial.cs" />
+    <Compile Include="Migrations\201903180509259_Initial.Designer.cs">
+      <DependentUpon>201903180509259_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903180522065_Second.cs" />
+    <Compile Include="Migrations\201903180522065_Second.Designer.cs">
+      <DependentUpon>201903180522065_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903180547103_Third.cs" />
+    <Compile Include="Migrations\201903180547103_Third.Designer.cs">
+      <DependentUpon>201903180547103_Third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903180557217_Fourth.cs" />
+    <Compile Include="Migrations\201903180557217_Fourth.Designer.cs">
+      <DependentUpon>201903180557217_Fourth.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -190,9 +199,8 @@
     <Compile Include="Models\Luggage.cs" />
     <Compile Include="Models\PassengerAreaAccess.cs" />
     <Compile Include="Models\PassengerDetails.cs" />
-    <Compile Include="Models\RfidbasedAirportSecurityContext.cs" />
+    <Compile Include="Models\RfidBasedAirportSecurityContext.cs" />
     <Compile Include="Models\RfidInventory.cs" />
-    <Compile Include="Models\ZoneAccessMetaData.cs" />
     <Compile Include="Models\ZoneInfoMetaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -280,8 +288,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903180025378_Initial.resx">
-      <DependentUpon>201903180025378_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903180509259_Initial.resx">
+      <DependentUpon>201903180509259_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903180522065_Second.resx">
+      <DependentUpon>201903180522065_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903180547103_Third.resx">
+      <DependentUpon>201903180547103_Third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903180557217_Fourth.resx">
+      <DependentUpon>201903180557217_Fourth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -300,9 +317,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50064</DevelopmentServerPort>
+          <DevelopmentServerPort>52663</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50064/</IISUrl>
+          <IISUrl>http://localhost:52663/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

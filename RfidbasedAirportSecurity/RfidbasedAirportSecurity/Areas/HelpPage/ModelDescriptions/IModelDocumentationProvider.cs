@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace RfidbasedAirportSecurity.Areas.HelpPage.ModelDescriptions
+namespace RfidBasedAirportSecurity.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {
